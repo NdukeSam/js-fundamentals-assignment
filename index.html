@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS challenge</title>
+</head>
+<body>
+    <div style="text-align: center; padding: 40px;">
+        <svg width="200" height="200" viewBox="0 0 200 200" style="margin-bottom: 30px;">
+            <circle cx="100" cy="100" r="80" fill="#FFD700"/>
+            <circle cx="85" cy="90" r="12" fill="#333"/>
+            <circle cx="115" cy="90" r="12" fill="#333"/>
+            <path d="M 70 70 L 100 30 L 130 70 Z" fill="red"/>
+            <circle cx="100" cy="30" r="10" fill="white"/>
+            
+            <path d="M 100 120 Q 110 130 120 125" stroke="#333" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </svg>
+        <h1>JS Challenge</h1>
+        <div id="console-output" style="background-color: #f0f0f0; border: 2px solid #333; padding: 20px; border-radius: 8px; max-width: 500px; margin: 0 auto; min-height: 100px; text-align: left; font-family: monospace; white-space: pre-wrap; word-wrap: break-word;"></div>
+    </div>
+
+    <script>
+        const consoleOutput = document.getElementById('console-output');
+        const originalLog = console.log;
+        console.log = function(...args) {
+            consoleOutput.textContent += args.join(' ') + '\n';
+            originalLog.apply(console, args);
+        };
+    </script>
+    <script src="challenge1.js"></script>
+</body>
+</html>
